@@ -8,7 +8,7 @@ import './styles.css';
 
 const projects = [
   { number: '01', name: 'Norovia', kind: 'B2B CHEMICAL DISTRIBUTION · TECH LEAD', description: 'Tech Lead at a B2B chemical distribution startup connecting industrial buyers with suppliers across the US. I work across product, infrastructure, and client delivery, from discovery through deployment.', color: 'peach', glyph: 'NOROVIA', href: 'https://norovia.us.com', linkLabel: 'Visit Norovia', external: true },
-  { number: '02', name: 'NK Studio Portfolio', kind: 'ILLUSTRATION PORTFOLIO · IN DEVELOPMENT', description: 'A portfolio for NK Studio featuring an interactive artwork gallery, character design and game art, commission tiers, and a contact form.', color: 'lavender', glyph: 'NK', href: 'https://github.com/YuriDumaran/nat_portfolio', linkLabel: 'View source', external: true },
+  { number: '02', name: 'NK Studio Portfolio', kind: 'ILLUSTRATION PORTFOLIO · IN DEVELOPMENT', description: 'A portfolio for NK Studio featuring an interactive artwork gallery, character design and game art, commission tiers, and a contact form.', color: 'lavender', glyph: 'NK', href: 'https://yuridumaran.github.io/nat_portfolio/', linkLabel: 'Visit site', external: true },
   { number: '03', name: 'Musings', kind: 'NOTES · IDEAS · WHATEVER’S ON MY MIND', description: 'A casual collection of writeups, observations, and ideas across whatever topics catch my interest.', color: 'mint', glyph: 'm.', href: '#musings', linkLabel: 'Read musings' },
 ];
 
