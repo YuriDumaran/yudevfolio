@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ArrowDown, ArrowDownRight, ArrowUpRight, Github, Linkedin, Mail, Moon, MoveUpRight, Sun } from 'lucide-react';
 import Musings from './components/Musings.jsx';
@@ -21,6 +21,8 @@ function App() {
   const [showMusings, setShowMusings] = useState(() => window.location.hash === '#musings');
   const [isNight, setIsNight] = useState(isLocalNight);
   const [showContact, setShowContact] = useState(false);
+  const [isThemeTransitioning, setIsThemeTransitioning] = useState(false);
+  const themeTransitionTimer = useRef(null);
 
   useEffect(() => {
     const syncView = () => setShowMusings(window.location.hash === '#musings');
@@ -32,11 +34,18 @@ function App() {
     window.scrollTo(0, 0);
   }, [showMusings]);
 
-  const toggleTheme = () => setIsNight(value => !value);
+  useEffect(() => () => window.clearTimeout(themeTransitionTimer.current), []);
 
-  if (showMusings) return <Musings isNight={isNight} onToggleTheme={toggleTheme} />;
+  const toggleTheme = () => {
+    window.clearTimeout(themeTransitionTimer.current);
+    setIsThemeTransitioning(true);
+    setIsNight(value => !value);
+    themeTransitionTimer.current = window.setTimeout(() => setIsThemeTransitioning(false), 500);
+  };
 
-  return <div className={`site-shell ${isNight ? 'theme-night' : 'theme-day'}`}>
+  if (showMusings) return <Musings isNight={isNight} isThemeTransitioning={isThemeTransitioning} onToggleTheme={toggleTheme} />;
+
+  return <div className={`site-shell ${isNight ? 'theme-night' : 'theme-day'} ${isThemeTransitioning ? 'theme-transitioning' : ''}`}>
     <header className="topbar"><a className="wordmark" href="#home"><span className="mark">y.</span> Yuri<span className="wordmark-muted">’s portfolio</span></a><nav><a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><button className="nav-contact-button" type="button" onClick={() => setShowContact(true)}>Contact <ArrowUpRight size={13}/></button></nav></header>
     <main>
       <section className="hero" id="home">

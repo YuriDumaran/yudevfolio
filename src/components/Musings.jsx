@@ -7,12 +7,12 @@ function formatDate(date) {
     .format(new Date(`${date}T12:00:00`));
 }
 
-export default function Musings({ isNight, onToggleTheme }) {
+export default function Musings({ isNight, isThemeTransitioning, onToggleTheme }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeMusing = musings[activeIndex];
 
   return (
-    <main className={`musings-page ${isNight ? 'theme-night' : 'theme-day'}`}>
+    <main className={`musings-page ${isNight ? 'theme-night' : 'theme-day'} ${isThemeTransitioning ? 'theme-transitioning' : ''}`}>
       <aside className="musings-sidebar">
         <div className="musings-sidebar-top">
           <a className="musings-back-link" href="#home"><span className="mark">y.</span> Yuri<span>’s portfolio</span></a>

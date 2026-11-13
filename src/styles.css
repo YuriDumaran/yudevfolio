@@ -14,3 +14,38 @@
 .theme-night .topbar nav .nav-contact-button{color:#b2beb0}.theme-night .topbar nav .nav-contact-button:hover{color:#e6b08e}.theme-night .scroll-cue,.theme-night .hero-index,.theme-night .project-footnote,.theme-night .project-number,.theme-night .project-arrow,.theme-night .about-aside{color:#a8b5a5}.theme-night .sun-toggle:focus-visible{outline-color:#f7e7ad}.nav-contact-button:focus-visible,.theme-toggle:focus-visible,.contact-modal-close:focus-visible,.contact-modal-link:focus-visible,.project-link-card:focus-visible{outline:2px solid #668265;outline-offset:3px}.theme-night .nav-contact-button:focus-visible,.theme-night .theme-toggle:focus-visible,.contact-modal-backdrop.is-night .contact-modal-close:focus-visible,.contact-modal-backdrop.is-night .contact-modal-link:focus-visible{outline-color:#d8e7c8}
 .theme-day.site-shell{--ink:#38483d;--green:#607965;--cream:#fbfaf6;--orange:#b98970;background:#fbfaf6;color:#38483d}.theme-day .topbar,.theme-day .hero,.theme-day .about,.theme-day .footer{background:#fbfaf6}.theme-day .work,.theme-day .experience-section{background:#fffefa}.theme-day .hero-art{background:#f0f1e9}.theme-day .sun-toggle:not(.is-night){background:#efd29b;box-shadow:0 0 0 17px #efd29b1e,0 0 0 39px #efd29b10}.theme-day .orbit{border-color:#d1d9ca}.theme-day .orbit-two{border-color:#dce1d5}.theme-day .plant i{background:#8fa38a}.theme-day .plant b{background:#7d9278}.theme-day .contact{background:#607965}.theme-day .button-dark{background:#607965}.theme-day .button-dark:hover{background:#526b57}.hero-art-label{position:absolute;z-index:3;padding:7px 10px;border:1px solid #e0e4d9;border-radius:999px;background:#fbfaf6e8;color:#718072;font:8px 'DM Mono',monospace;letter-spacing:.9px;box-shadow:0 3px 12px #26352b0d;pointer-events:none;white-space:nowrap}.hero-art-label-top{top:25px;left:50%;transform:translateX(-50%)}.project-card-link{display:block;color:inherit}.project-card-link:focus-visible{outline:2px solid var(--green);outline-offset:5px}.project-card-link .project-link{transition:color .2s,gap .2s}.project-card-link:hover .project-link{gap:10px}.project-card-link:hover .project-arrow{transform:translate(3px,-3px)}
 .topbar nav .nav-contact-button{display:inline-flex;align-items:center;gap:4px;padding:0;border:0;background:none;color:#515d53;font:inherit;cursor:pointer}.topbar nav .nav-contact-button:hover{color:var(--orange)}.button{font-family:inherit;cursor:pointer;border:0}.contact-modal-backdrop{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:20px;background:#111b15a6;backdrop-filter:blur(7px);animation:contact-fade-in .2s ease both}.contact-modal{position:relative;width:min(100%,440px);padding:34px;background:#fbfaf6;color:#334238;border:1px solid #ffffffb8;border-radius:18px;box-shadow:0 24px 80px #111b1552;animation:contact-pop-in .28s cubic-bezier(.2,.8,.2,1) both}.contact-modal>.eyebrow{margin-bottom:12px;color:#718072}.contact-modal h2{font:600 34px/1.1 Manrope,sans-serif;letter-spacing:-1.5px;margin:0}.contact-modal h2 .serif{color:#607965}.contact-modal-copy{font-size:12px;color:#788176;margin:10px 0 22px}.contact-modal-close{position:absolute;top:16px;right:16px;width:31px;height:31px;display:grid;place-items:center;border:1px solid #e1e5dc;border-radius:50%;background:#fffefa;color:#566454;cursor:pointer}.contact-modal-close:hover{background:#e9eee4}.contact-modal-links{display:grid;gap:9px}.contact-modal-link{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #e4e7df;border-radius:10px;background:#fffefa;color:inherit;transition:transform .2s,border-color .2s,background .2s}.contact-modal-link:hover{transform:translateY(-2px);border-color:#a9baa7;background:#f7f8f2}.contact-modal-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:9px;background:#edf1e8;color:#56745a}.contact-modal-label{display:grid;gap:3px;min-width:0}.contact-modal-label strong{font:600 12px Manrope,sans-serif}.contact-modal-label small{font-size:10px;color:#7b857b;overflow-wrap:anywhere}.contact-modal-arrow{margin-left:auto;color:#718072}.contact-modal-backdrop.is-night .contact-modal{background:#1b281f;color:#e8eee7;border-color:#3e4c41}.contact-modal-backdrop.is-night .contact-modal>.eyebrow,.contact-modal-backdrop.is-night .contact-modal-copy{color:#aab7a7}.contact-modal-backdrop.is-night .contact-modal-close,.contact-modal-backdrop.is-night .contact-modal-link{background:#233127;border-color:#3b4a3d;color:#e8eee7}.contact-modal-backdrop.is-night .contact-modal-link:hover{background:#2b3b2f;border-color:#718b70}.contact-modal-backdrop.is-night .contact-modal-icon{background:#304331;color:#c7d7bf}.contact-modal-backdrop.is-night .contact-modal-label small{color:#b2beb0}@keyframes contact-fade-in{from{opacity:0}to{opacity:1}}@keyframes contact-pop-in{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@media(prefers-reduced-motion:reduce){.contact-modal-backdrop,.contact-modal{animation:none!important}.contact-modal-link{transition:none}}
+
+/* Keep every theme color change on the same short, smooth timeline. */
+.site-shell.theme-transitioning,
+.musings-page.theme-transitioning {
+  transition-duration: 450ms !important;
+  transition-timing-function: cubic-bezier(.22, .61, .36, 1) !important;
+}
+
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition-duration: 450ms !important;
+  transition-timing-function: cubic-bezier(.22, .61, .36, 1) !important;
+}
+
+.theme-transitioning .sun-toggle svg,
+.theme-transitioning .theme-toggle-icon svg {
+  animation: theme-icon-change 450ms cubic-bezier(.22, .61, .36, 1) both;
+}
+
+@keyframes theme-icon-change {
+  0% { opacity: .25; transform: scale(.72) rotate(-28deg); }
+  65% { opacity: .85; transform: scale(1.08) rotate(8deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-transitioning,
+  .theme-transitioning *,
+  .theme-transitioning *::before,
+  .theme-transitioning *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
