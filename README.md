@@ -11,6 +11,12 @@ npm run dev
 
 Create a production build with `npm run build` and preview it with `npm run preview`.
 
+## Deploy to GitHub Pages
+
+The `main` branch is deployed to GitHub Pages by the workflow in `.github/workflows/pages.yml`.
+In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**.
+After the workflow completes, the site is available at `https://yuridumaran.github.io/yudevfolio/`.
+
 ## Personalize
 
 - Update the introduction, about section, and project entries in `src/main.jsx`.
